@@ -72,3 +72,13 @@ export interface Meeting {
   areasOfInterest: AreaOfInterest[];
   roles: MeetingRole[];
 }
+
+export interface MeetingList {
+  total: number;
+  filtered: number;
+  draw: number;
+  data: {
+    meetings: Meeting[];
+    lastModified: string;
+  };
+}

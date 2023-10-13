@@ -2,20 +2,13 @@ import {
   ApiResponseSessionsData,
   Language,
   Meeting,
+  MeetingList,
   MeetingOption,
   MeetingRole,
   Tag,
 } from './types';
 
-export function normalizeSessionsResponse(response: ApiResponseSessionsData): {
-  total: number;
-  filtered: number;
-  draw: number;
-  data: {
-    meetings: Meeting[];
-    lastModified: string;
-  };
-} {
+export function normalizeSessionsResponse(response: ApiResponseSessionsData): MeetingList {
   return {
     ...response,
     data: {
