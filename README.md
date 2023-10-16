@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-![Tests](https://github.com/kelfish/grandreserva-client/actions/workflows/tests.yml/badge.svg?branch=main)
+![Tests](https://github.com/BlueElephantDigital/gr-api-js/actions/workflows/tests.yml/badge.svg?branch=main)
 
 # GrandReserva Client SDK
 
