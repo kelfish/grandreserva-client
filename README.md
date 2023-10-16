@@ -27,7 +27,7 @@ Currently supported calls:
 1. To use the library, install as a `git` dependency using `npm`.
 
    ```sh
-   npm install grandreserva-client@kelfish/grandreserva-client#v0.0.1
+   npm install grandreserva-client@BlueElephantDigital/gr-api-js#v0.0.1
    ```
 
 2. Import the `GrandReservaClient` class
