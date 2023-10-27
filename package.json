@@ -1,7 +1,7 @@
 {
   "name": "grandreserva-sdk",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SDK for GrandReserva API used by COP conferences",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/kelfish/grandreserva-sdk.git"
+    "url": "git+ssh://git@github.com/BlueElephantDigital/gr-api-js.git"
   },
   "keywords": [
     "GrandReserva"
@@ -25,9 +25,9 @@
   "author": "Kel Phillipson <kel@kelfish.com>",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/kelfish/grandreserva-client/issues"
+    "url": "https://github.com/BlueElephantDigital/gr-api-js/issues"
   },
-  "homepage": "https://github.com/kelfish/grandreserva-client#readme",
+  "homepage": "https://github.com/BlueElephantDigital/gr-api-js#readme",
   "devDependencies": {
     "@types/jest": "^29.5.5",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
