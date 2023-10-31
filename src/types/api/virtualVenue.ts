@@ -1,10 +1,10 @@
-export interface ApiResponseList {
+export interface ExternalVenueApiResponseList {
   filtered: number;
   draw: number;
   total: number;
 }
 
-export interface ApiResponseSessionsData extends ApiResponseList {
+export interface ExternalVenueApiResponse extends ExternalVenueApiResponseList {
   data: {
     last_modified: string;
     meetings: {
