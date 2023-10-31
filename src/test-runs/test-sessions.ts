@@ -1,16 +1,21 @@
 import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
-import { GrandReservaClient } from './client';
-import { MeetingList } from './types';
+import { GrandReservaClient } from '../client';
+import { SessionList } from '../types';
 
-async function saveDataToTempFile(data: MeetingList) {
-  const dir = path.resolve(__dirname, '../tmp');
-  await fs.promises.mkdir(dir);
-  await fs.promises.writeFile(
-    path.resolve(dir, 'api-meeting-data.json'),
-    JSON.stringify(data, undefined, 2),
-  );
+async function saveDataToTempFile(data: SessionList) {
+  const dir = path.resolve(__dirname, '../../tmp');
+  const filePath = path.resolve(dir, 'api-session-data.json');
+  try {
+    await fs.promises.mkdir(dir);
+  } catch (error) {
+    // ignore
+  }
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
+  }
+  await fs.promises.writeFile(filePath, JSON.stringify(data, undefined, 2));
 }
 
 async function main() {
