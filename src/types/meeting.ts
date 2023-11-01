@@ -1,84 +1,71 @@
-interface NamedRecord {
-  id: number;
-  name: string;
+import { Language } from './language';
+
+export enum MeetingStatus {
+  Pending = 'Pending',
+  ToBeConfirmed = 'ToBeConfirmed',
+  Confirmed = 'Confirmed',
 }
 
-export interface MeetingTrack extends NamedRecord {}
-
-export interface MeetingRoom extends NamedRecord {}
-
-export interface SecurityRule extends NamedRecord {
-  aadGroup: string;
-}
-
-export interface OrganizerType extends NamedRecord {}
-
-export interface AreaOfInterest extends NamedRecord {}
-
-export interface OptionGroup extends NamedRecord {}
-
-export interface MeetingOption extends NamedRecord {
-  group: OptionGroup;
-}
-
-export interface MeetingRole {
-  classification: 'live' | 'ondemand';
-  exceptionList?: SecurityRule;
-  targetPlatform: 'msteams' | 'jwt' | 't-systems' | 'youtube' | null;
-  securityRule?: SecurityRule;
-  media: string;
-  role: 'join' | 'watch';
-}
-
-export interface Tag extends NamedRecord {
-  body: NamedRecord;
-}
-
-export interface Language {
+export interface MeetingRoom {
   code: string;
   name: string;
+}
+
+export interface Webex {
+  meetingId: string;
+  meetingNumber: string;
+  sipAddress: string;
+  password: string;
+  hostKey: string;
 }
 
 export interface Meeting {
   id: number;
-  track: MeetingTrack;
   name: string;
   title: string;
-  code: string;
   start: string;
   end: string;
-  timezone: string;
   description: string;
   room: MeetingRoom;
-  meetingType: string;
-  subMeetingType: string;
-  deleted: boolean;
+  targetPlatform: 'msteams' | 'jwt' | 't-systems' | 'youtube';
+  status: MeetingStatus;
 
-  tags: Tag[];
+  onDemandUrl: string;
+  joinUrl: string;
+  announcementType: string;
+  streamUploadUrls: string[];
+
+  webex?: Webex;
+
+  organizer: string;
+
   languages: Language[];
+  options: string[];
 
-  broadcastRequired: boolean;
-
-  organizerType: OrganizerType;
-
-  lobby: boolean;
-  moderatedChat: boolean;
   documentUrl: string;
+  streamIngestUrls: string[];
+  watchSecurityRule: string;
+  timestamp: string;
+  videoRecording: boolean;
+  type: string;
+  youtubePublicUrl: string;
+  interpretationRequired: boolean;
+  interpretationLanguages: string;
+  startTime: string;
+  endTime: string;
 
-  meetingOptions: MeetingOption[];
+  publicBroadcastStandard: boolean;
+  publicBroadcastPremium: boolean;
+  audioRequired: string;
+  date: string;
+  watchGroupAccess: string;
+  streamName: string;
+  joinGroupAccess: string;
+  streamKeys: string[];
 
-  premiumWebcast: boolean;
-  publish: boolean;
-  areasOfInterest: AreaOfInterest[];
-  roles: MeetingRole[];
-}
-
-export interface MeetingList {
-  total: number;
-  filtered: number;
-  draw: number;
-  data: {
-    meetings: Meeting[];
-    lastModified: string;
-  };
+  notes: string;
+  joinSecurityRule: string;
+  hostEmail: string;
+  watchUrl: string;
+  internalVenueBroadcast: boolean;
 }
