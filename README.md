@@ -27,7 +27,7 @@ Currently supported calls:
 1. To use the library, install as a `git` dependency using `npm`.
 
    ```sh
-   npm install grandreserva-client@BlueElephantDigital/gr-api-js#v0.0.1
+   npm install grandreserva-client@BlueElephantDigital/gr-api-js#v0.0.3
    ```
 
 2. Import the `GrandReservaClient` class
@@ -47,19 +47,84 @@ Currently supported calls:
 
 4. Make a call to the `client`
 
+   __Get Meetings for a conference (`/virtual_meeting`):__
+
+   ```js
+   const data = await client.getMeetingsForConference(78);
+   ```
+
+   __Get Meeting by ID (`/virtual_meeting`):__
+
+   ```js
+   const data = await client.getMeetingById(...);
+   ```
+
+   _This previous method does not return Stream Keys or Ingest URLs_
+   __Get Sessions for a conference (`/virtual_venues`):__
+
    ```js
    const data = await client.getSessionsForConference(78);
    ```
 
-5. API data will be returned in a `MeetingList` object
+5. API data will be returned in two possible objects:
+
+   __getMeetingsForConference__ & __getMeetingById__
 
    ```js
-   interface MeetingList {
+   interface Meeting {
+     id: number;
+     name: string;
+     title: string;
+     start: string;
+     end: string;
+     description: string;
+     room: MeetingRoom;
+     targetPlatform: 'msteams' | 'jwt' | 't-systems' | 'youtube';
+     status: MeetingStatus;
+     onDemandUrl: string;
+     joinUrl: string;
+     announcementType: string;
+     streamUploadUrls: string[];
+     webex?: Webex;
+     organizer: string;
+     languages: Language[];
+     options: string[];
+     documentUrl: string;
+     streamIngestUrls: string[];
+     watchSecurityRule: string;
+     timestamp: string;
+     videoRecording: boolean;
+     type: string;
+     youtubePublicUrl: string;
+     interpretationRequired: boolean;
+     interpretationLanguages: string;
+     startTime: string;
+     endTime: string;
+     publicBroadcastStandard: boolean;
+     publicBroadcastPremium: boolean;
+     audioRequired: string;
+     date: string;
+     watchGroupAccess: string;
+     streamName: string;
+     joinGroupAccess: string;
+     streamKeys: string[];
+     notes: string;
+     joinSecurityRule: string;
+     hostEmail: string;
+     watchUrl: string;
+     internalVenueBroadcast: boolean;
+   }
+   ```
+
+   __getSessionsForConference__
+
+   ```js
+   interface SessionList {
      total: number;
      filtered: number;
      draw: number;
      data: {
-       meetings: Meeting[];
+       meetings: Session[];
        lastModified: string;
      };
    }
