@@ -1,8 +1,8 @@
 {
-  "name": "grandreserva-sdk",
+  "name": "grandreserva-client",
   "private": true,
-  "version": "0.0.3",
-  "description": "SDK for GrandReserva API used by COP conferences",
+  "version": "0.0.4",
+  "description": "Typescript library for GrandReserva API used by COP conferences",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
