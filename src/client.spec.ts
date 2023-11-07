@@ -18,11 +18,18 @@ describe('client.GrandReservaClient', () => {
     expect(endpoint).toEqual(`${ENDPOINT_SESSIONS}?modified_since=${modifiedSince}`);
   });
 
+  it('buildSessionsEndpoint with meeting ID', () => {
+    const meetingId = 1234;
+    const endpoint = GrandReservaClient.buildSessionsEndpoint(CONFERENCE_ID, { meetingIds: [meetingId] });
+
+    expect(endpoint).toEqual(`${ENDPOINT_SESSIONS}?meeting_ids=${meetingId}`);
+  });
+
   it('buildSessionsEndpoint with meeting IDs', () => {
     const meetingIds = [1234, 9860];
     const endpoint = GrandReservaClient.buildSessionsEndpoint(CONFERENCE_ID, { meetingIds });
 
-    expect(endpoint).toEqual(`${ENDPOINT_SESSIONS}?meeting_ids=[${meetingIds.join(',')}]`);
+    expect(endpoint).toEqual(`${ENDPOINT_SESSIONS}?meeting_ids=${meetingIds.join(',')}`);
   });
 
   it('buildSessionsEndpoint with start and end', () => {

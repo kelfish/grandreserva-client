@@ -75,7 +75,7 @@ export class GrandReservaClient {
       }
 
       if (meetingIds && meetingIds.length) {
-        query.push(`meeting_ids=[${meetingIds.join(',')}]`);
+        query.push(`meeting_ids=${meetingIds.join(',')}`);
       }
     }
 
