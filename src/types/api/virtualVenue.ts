@@ -39,6 +39,7 @@ export interface ExternalVenueApiResponse extends ExternalVenueApiResponseList {
       }[];
       room_name: string;
       room_id: number;
+      room_local_name: string;
       meeting_type: string;
       sub_meeting_type: string;
       deleted: boolean;

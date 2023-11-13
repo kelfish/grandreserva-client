@@ -7,7 +7,9 @@ interface NamedRecord {
 
 export interface SessionTrack extends NamedRecord {}
 
-export interface SessionRoom extends NamedRecord {}
+export interface SessionRoom extends NamedRecord {
+  localName: string;
+}
 
 export interface SecurityRule extends NamedRecord {
   aadGroup: string;

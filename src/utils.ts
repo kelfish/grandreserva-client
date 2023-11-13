@@ -32,6 +32,7 @@ export function normalizeSessionsResponse(response: ExternalVenueApiResponse): S
         room: {
           id: meeting.room_id,
           name: meeting.room_name,
+          localName: meeting.room_local_name
         },
         meetingType: meeting.meeting_type,
         subMeetingType: meeting.sub_meeting_type,
