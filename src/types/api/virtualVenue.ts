@@ -30,6 +30,8 @@ export interface ExternalVenueApiResponse extends ExternalVenueApiResponseList {
 
       start: string;
       end: string;
+      actual_start: string;
+      actual_end: string;
       timezone: string;
       description: string;
       publish: boolean;
