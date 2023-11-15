@@ -46,6 +46,8 @@ export interface Session {
   code: string;
   start: string;
   end: string;
+  actualStart: string;
+  actualEnd: string;
   timezone: string;
   description: string;
   room: SessionRoom;
