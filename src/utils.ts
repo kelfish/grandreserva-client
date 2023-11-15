@@ -34,7 +34,12 @@ export function normalizeSessionsResponse(response: ExternalVenueApiResponse): S
         room: {
           id: meeting.room_id,
           name: meeting.room_name,
+          description: meeting.room_description,
           localName: meeting.room_local_name,
+          tags: meeting.room_tags.map((tag) => ({
+            name: tag.name,
+            groupName: tag.group_name,
+          })),
         },
         meetingType: meeting.meeting_type,
         subMeetingType: meeting.sub_meeting_type,

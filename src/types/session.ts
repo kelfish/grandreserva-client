@@ -9,6 +9,11 @@ export interface SessionTrack extends NamedRecord {}
 
 export interface SessionRoom extends NamedRecord {
   localName: string;
+  description: string;
+  tags: {
+    name: string;
+    groupName: string;
+  }[];
 }
 
 export interface SecurityRule extends NamedRecord {
