@@ -63,6 +63,8 @@ export interface ExternalVenueApiResponse extends ExternalVenueApiResponseList {
         name: string;
       }[];
       premium_webcast: boolean;
+      stream_ingest_urls: string[];
+      stream_keys: string[];
     }[];
   };
 }
