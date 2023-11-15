@@ -70,6 +70,8 @@ export interface Session {
   publish: boolean;
   areasOfInterest: AreaOfInterest[];
   roles: SessionRole[];
+  streamKeys: string[];
+  streamIngestUrls: string[];
 }
 
 export interface SessionList {
