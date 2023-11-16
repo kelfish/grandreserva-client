@@ -53,6 +53,7 @@ export interface Session {
   end: string;
   actualStart: string;
   actualEnd: string;
+  status: string;
   timezone: string;
   description: string;
   room: SessionRoom;
