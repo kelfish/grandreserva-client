@@ -31,6 +31,7 @@ export function normalizeSessionsResponse(response: ExternalVenueApiResponse): S
         actualEnd: meeting.actual_end,
         timezone: meeting.timezone,
         description: meeting.description,
+        status: meeting.status,
         room: {
           id: meeting.room_id,
           name: meeting.room_name,
