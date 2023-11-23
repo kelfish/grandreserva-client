@@ -92,10 +92,11 @@ export function normalizeSessionsResponse(response: ExternalVenueApiResponse): S
                   name: role.exception_list_name || '',
                   aadGroup: role.exception_list_aad_group || '',
                 }
-              : undefined,
+              : null,
           media: role.media,
           role: role.role,
           targetPlatform: role.target_platform,
+          securityGroup: role.security_group,
           securityRule:
             role.security_rule_id !== null
               ? {
@@ -103,7 +104,7 @@ export function normalizeSessionsResponse(response: ExternalVenueApiResponse): S
                   name: role.security_rule_name || '',
                   aadGroup: role.security_rule_aad_group || '',
                 }
-              : undefined,
+              : null,
         })),
       })),
     },

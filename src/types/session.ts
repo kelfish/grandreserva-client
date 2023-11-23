@@ -32,9 +32,10 @@ export interface SessionOption extends NamedRecord {
 
 export interface SessionRole {
   classification: 'live' | 'ondemand';
-  exceptionList?: SecurityRule;
+  exceptionList: SecurityRule | null;
   targetPlatform: 'msteams' | 'jwt' | 't-systems' | 'youtube' | null;
-  securityRule?: SecurityRule;
+  securityRule: SecurityRule | null;
+  securityGroup: string;
   media: string;
   role: 'join' | 'watch';
 }
