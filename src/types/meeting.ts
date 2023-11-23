@@ -35,7 +35,7 @@ export interface Meeting {
   announcementType: string;
   streamUploadUrls: string[];
 
-  webex?: Webex;
+  webex: Webex | null;
 
   organizer: string;
 
