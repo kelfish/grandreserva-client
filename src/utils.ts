@@ -150,7 +150,7 @@ export function normalizeMeetingsResponse(response: ExternalMeetingApiResponse):
           hostKey: v.webex_host_key,
           password: v.webex_password,
         }
-      : undefined,
+      : null,
 
     organizer: v.organizer,
 
