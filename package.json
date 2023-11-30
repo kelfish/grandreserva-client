@@ -1,7 +1,7 @@
 {
   "name": "grandreserva-client",
   "private": true,
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Typescript library for GrandReserva API used by COP conferences",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
