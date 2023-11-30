@@ -71,6 +71,11 @@ export interface ExternalVenueApiResponse extends ExternalVenueApiResponseList {
         name: string;
       }[];
       premium_webcast: boolean;
+      standard_webcast: boolean;
+      youtube_required: false;
+      youtube_watch_url: string | null;
+      youtube_stream_key: string | null;
+      youtube_ingest_urls: string[];
       stream_ingest_urls: string[];
       stream_keys: string[];
     }[];
