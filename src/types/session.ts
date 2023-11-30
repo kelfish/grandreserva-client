@@ -30,6 +30,13 @@ export interface SessionOption extends NamedRecord {
   group: OptionGroup;
 }
 
+export interface YouTube {
+  required: boolean;
+  watchUrl: string | null;
+  streamKey: string | null;
+  ingestUrls: string[];
+}
+
 export interface SessionRole {
   classification: 'live' | 'ondemand';
   exceptionList: SecurityRule | null;
@@ -76,6 +83,10 @@ export interface Session {
   meetingOptions: SessionOption[];
 
   premiumWebcast: boolean;
+  standardWebcast: boolean;
+
+  youtube: YouTube;
+
   publish: boolean;
   areasOfInterest: AreaOfInterest[];
   roles: SessionRole[];
