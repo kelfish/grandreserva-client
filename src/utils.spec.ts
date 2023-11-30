@@ -10,6 +10,8 @@ describe('utils.normalizeSessionsResponse', () => {
 
     expect(normalized.data.meetings.length).toEqual(sessions.data.meetings.length);
     expect(normalized.data.meetings[0].code).toEqual(sessions.data.meetings[0].session_code);
+    expect(normalized.data.meetings[0].status).toBeDefined();
+    expect(normalized.data.meetings[0].standardWebcast).toBeDefined();
     expect(normalized.data.meetings[normalized.data.meetings.length - 1].roles.length).toEqual(
       sessions.data.meetings[sessions.data.meetings.length - 1].roles.length,
     );
